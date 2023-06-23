@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "TetrisUSFX01",
+			"Path": "C:\\Users\\USUARIO\\Desktop\\Tetris - Final\\Source\\TetrisUSFX01.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "TetrisUSFX01Editor",
+			"Path": "C:\\Users\\USUARIO\\Desktop\\Tetris - Final\\Source\\TetrisUSFX01Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

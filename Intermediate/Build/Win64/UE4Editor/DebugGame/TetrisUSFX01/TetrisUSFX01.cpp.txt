@@ -1,0 +1,2 @@
+C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\DebugGame\TetrisUSFX01\Definitions.TetrisUSFX01.h
+C:\Users\USUARIO\Desktop\Tetris - Final\Source\TetrisUSFX01\TetrisUSFX01.h

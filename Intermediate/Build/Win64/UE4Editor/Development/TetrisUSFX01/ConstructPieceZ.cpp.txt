@@ -1,0 +1,3 @@
+C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\Definitions.TetrisUSFX01.h
+C:\Users\USUARIO\Desktop\Tetris - Final\Source\TetrisUSFX01\ConstructPieceZ.h
+C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\Inc\TetrisUSFX01\ConstructPieceZ.generated.h
