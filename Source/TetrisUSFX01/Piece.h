@@ -37,6 +37,6 @@ private:
 public:
 	void SpawnBlocks();
 	void EstablecerBlocks(TArray<ABlock*> _Blocks);
-	void EstablecerNumsBlocks(TArray<int*> _BlocksNum);
+	void EstablecerNumsBlocks(TArray<int> _BlocksNum);
 	void EstablecerCoordenadasBlocks(std::vector<std::pair<float, float>> _CoordenadasBlocks);
 };

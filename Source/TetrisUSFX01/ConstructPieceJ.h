@@ -13,15 +13,15 @@ class TETRISUSFX01_API AConstructPieceJ : public AActor, public IConstructorPiec
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AConstructPieceJ();
-
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
+public:
 	virtual void Tick(float DeltaTime) override;
-
+	virtual void SpawnearBlocks() override;
+	virtual void SpawnearBlocks(TArray<int> _Blocks) override;
+	virtual class APiece* ObtenerPiece() override;
+	virtual TArray<int> ObtenerBlocksNums() override;
+private:
+	class APiece* Piece;
 };

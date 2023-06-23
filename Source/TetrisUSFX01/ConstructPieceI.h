@@ -11,8 +11,6 @@ UCLASS()
 class TETRISUSFX01_API AConstructPieceI : public AActor, public IConstructorPiece
 {
 	GENERATED_BODY()
-private:
-	class APiece* Piece;
 public:	
 	AConstructPieceI();
 protected:
@@ -23,4 +21,6 @@ public:
 	virtual void SpawnearBlocks(TArray<int> _Blocks) override;
 	virtual class APiece* ObtenerPiece() override;
 	virtual TArray<int> ObtenerBlocksNums() override;
+private:
+	class APiece* Piece;
 };	

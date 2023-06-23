@@ -52,6 +52,9 @@ void AConstructPieceI::SpawnearBlocks(TArray<int> _Blocks)
 
 APiece* AConstructPieceI::ObtenerPiece()
 {
+	Piece->EstablecerBlocks(Blocks);
+	Piece->EstablecerCoordenadasBlocks(CoordenadasBlocks);
+	Piece->EstablecerNumsBlocks(BlocksNums);
 	return Piece;
 }
 

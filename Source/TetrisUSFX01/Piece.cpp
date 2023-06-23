@@ -57,7 +57,7 @@ void APiece::EstablecerBlocks(TArray<ABlock*> _Blocks)
     Blocks = _Blocks;
 }
 
-void APiece::EstablecerNumsBlocks(TArray<int*> _BlocksNum)
+void APiece::EstablecerNumsBlocks(TArray<int> _BlocksNum)
 {
     BlocksNum = _BlocksNum;
 }
