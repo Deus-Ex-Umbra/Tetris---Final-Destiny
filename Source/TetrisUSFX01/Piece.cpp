@@ -26,11 +26,6 @@ void APiece::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void APiece::EstablecerBlocks(TArray<ABlock*> _Blocks)
-{
-    Blocks = _Blocks;
-}
-
 void APiece::EstablecerNumsBlocks(TArray<int> _BlocksNum)
 {
     BlocksNum = _BlocksNum;
@@ -39,6 +34,22 @@ void APiece::EstablecerNumsBlocks(TArray<int> _BlocksNum)
 void APiece::EstablecerCoordenadasBlocks(std::vector<std::pair<float, float>> _CoordenadasBlocks)
 {
     CoordenadasBlocks = _CoordenadasBlocks;
+}
+
+void APiece::SpawnearBlocks()
+{
+    int indice = 0;
+    for (auto& Coordenada : CoordenadasBlocks)
+    {
+        ABlock* B = FabricaBlocks->FabricarBlock(BlocksNum[indice++], this->GetActorLocation(), FRotator(0.0f, 0.0f, 0.0f));
+        Blocks.Add(B);
+        B->SetActorLocation(FVector(0.0f, Coordenada.first, Coordenada.second));
+        B->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
+	}
+}
+
+void APiece::SpawnearBlocks(TArray<int> _Blocks)
+{
 }
 
 void APiece::DrawDebugLines()

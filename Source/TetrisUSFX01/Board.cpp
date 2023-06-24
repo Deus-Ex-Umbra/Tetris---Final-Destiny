@@ -25,19 +25,19 @@ ABoard::ABoard()
 
 void ABoard::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
     DirectorPiece = GetWorld()->SpawnActor<ADirectorPiece>(ADirectorPiece::StaticClass());
-    ConstructorPieceI = GetWorld()->SpawnActor<AConstructPieceI>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceJ = GetWorld()->SpawnActor<AConstructPieceJ>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceL = GetWorld()->SpawnActor<AConstructPieceL>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceO = GetWorld()->SpawnActor<AConstructPieceO>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceS = GetWorld()->SpawnActor<AConstructPieceS>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceT = GetWorld()->SpawnActor<AConstructPieceT>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceZ = GetWorld()->SpawnActor<AConstructPieceZ>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceSum = GetWorld()->SpawnActor<AConstructPieceSum>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceUnique = GetWorld()->SpawnActor<AConstructPieceUnique>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    ConstructorPieceX = GetWorld()->SpawnActor<AConstructPieceX>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    PieceCDave = GetWorld()->SpawnActor<APieceCDave>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceI = GetWorld()->SpawnActor<AConstructPieceI>(AConstructPieceI::StaticClass());
+    ConstructorPieceJ = GetWorld()->SpawnActor<AConstructPieceJ>(AConstructPieceJ::StaticClass());
+    ConstructorPieceL = GetWorld()->SpawnActor<AConstructPieceL>(AConstructPieceL::StaticClass());
+    ConstructorPieceO = GetWorld()->SpawnActor<AConstructPieceO>(AConstructPieceO::StaticClass());
+    ConstructorPieceS = GetWorld()->SpawnActor<AConstructPieceS>(AConstructPieceS::StaticClass());
+    ConstructorPieceT = GetWorld()->SpawnActor<AConstructPieceT>(AConstructPieceT::StaticClass());
+    ConstructorPieceZ = GetWorld()->SpawnActor<AConstructPieceZ>(AConstructPieceZ::StaticClass());
+    ConstructorPieceSum = GetWorld()->SpawnActor<AConstructPieceSum>(AConstructPieceSum::StaticClass());
+    ConstructorPieceUnique = GetWorld()->SpawnActor<AConstructPieceUnique>(AConstructPieceUnique::StaticClass());
+    ConstructorPieceX = GetWorld()->SpawnActor<AConstructPieceX>(AConstructPieceX::StaticClass());
+    PieceCDave = GetWorld()->SpawnActor<APieceCDave>(APieceCDave::StaticClass());
     for (TActorIterator<APiece> it(GetWorld()); it; ++it)
     {
         if (it->GetFName() == TEXT("DissmissPieces"))
@@ -199,7 +199,9 @@ void ABoard::NewPiece()
         DirectorPiece->EstablecerConstructorPiece(PieceCDave);
         break;
     }
+    DirectorPiece->ConstruirPiece();
     CurrentPiece = DirectorPiece->ObtenerPiece();
+    CurrentPiece->SpawnearBlocks();
     bGameOver = CheckGameOver();
     if (bGameOver)
     {

@@ -14,8 +14,7 @@ protected:
 	virtual void BeginPlay() override;
 public:
 	virtual void Tick(float DeltaTime) override;
-	virtual void SpawnearBlocks() override;
-	virtual void SpawnearBlocks(TArray<int> _Blocks) override;
+	virtual void ConstruirPiece() override;
 	virtual class APiece* ObtenerPiece() override;
 	virtual TArray<int> ObtenerBlocksNums() override;
 private:

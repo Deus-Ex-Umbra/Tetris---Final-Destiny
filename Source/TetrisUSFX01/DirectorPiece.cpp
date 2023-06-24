@@ -23,12 +23,7 @@ void ADirectorPiece::EstablecerConstructorPiece(IConstructorPiece* _ConstructorP
 
 void ADirectorPiece::ConstruirPiece()
 {
-	ConstructorPiece->SpawnearBlocks();
-}
-
-void ADirectorPiece::ConstruirPiece(TArray<int> _Blocks)
-{
-	ConstructorPiece->SpawnearBlocks(_Blocks);
+	ConstructorPiece->ConstruirPiece();
 }
 
 APiece* ADirectorPiece::ObtenerPiece()

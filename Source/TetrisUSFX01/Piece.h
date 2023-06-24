@@ -35,7 +35,8 @@ private:
 	std::vector<std::pair<float, float>> CoordenadasBlocks;
 	class AFabricaBlocks* FabricaBlocks;
 public:
-	void EstablecerBlocks(TArray<ABlock*> _Blocks);
 	void EstablecerNumsBlocks(TArray<int> _BlocksNum);
 	void EstablecerCoordenadasBlocks(std::vector<std::pair<float, float>> _CoordenadasBlocks);
+	void SpawnearBlocks();
+	void SpawnearBlocks(TArray<int> _Blocks);
 };

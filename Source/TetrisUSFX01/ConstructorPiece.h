@@ -14,14 +14,11 @@ class TETRISUSFX01_API IConstructorPiece
 	GENERATED_BODY()
 protected:
 	USceneComponent* PieceScene;
-	TArray<class ABlock*> Blocks;
 	TArray<int> BlocksNums;
-	class AFabricaBlocks* FabricaBlocks;
 	std::vector<std::pair<float, float>> CoordenadasBlocks;
 	int NumBlocks;
 public:
-	virtual void SpawnearBlocks() = 0;
-	virtual void SpawnearBlocks(TArray<int> _Blocks) = 0;
+	virtual void ConstruirPiece() = 0;
 	virtual class APiece* ObtenerPiece() = 0;
 	virtual TArray<int> ObtenerBlocksNums() = 0;
 };
