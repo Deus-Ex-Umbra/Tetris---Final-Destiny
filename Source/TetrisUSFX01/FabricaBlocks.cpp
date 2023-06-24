@@ -9,6 +9,7 @@
 #include "BlockCeleste.h"
 #include "BlockEspecial.h"
 #include "BlockBrilloso.h"
+#include "BlockMadera.h"
 
 AFabricaBlocks::AFabricaBlocks()
 {
@@ -38,15 +39,17 @@ ABlock* AFabricaBlocks::FabricarBlock(int _numeroblock, FVector Locacion, FRotat
 	case 3:
 		return GetWorld()->SpawnActor<ABlockVerde>(Locacion, Rotacion);
 	case 4:
-		return GetWorld()->SpawnActor<ABlockTransparente>(Locacion, Rotacion);
+		return GetWorld()->SpawnActor<ABlockCeleste>(Locacion, Rotacion);
 	case 5:
 		return GetWorld()->SpawnActor<ABlockAmarillo>(Locacion, Rotacion);
 	case 6:
 		return GetWorld()->SpawnActor<ABlockMorado>(Locacion, Rotacion);
 	case 7:
-		return GetWorld()->SpawnActor<ABlockCeleste>(Locacion, Rotacion);
+		return GetWorld()->SpawnActor<ABlockTransparente>(Locacion, Rotacion);
 	case 8:
 		return GetWorld()->SpawnActor<ABlockBrilloso>(Locacion, Rotacion);
+	case 9:
+		return GetWorld()->SpawnActor<ABlockMadera>(Locacion, Rotacion);
 	default:
 		return GetWorld()->SpawnActor<ABlockEspecial>(Locacion, Rotacion);
 	}

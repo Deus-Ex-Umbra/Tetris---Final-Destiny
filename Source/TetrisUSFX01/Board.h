@@ -17,6 +17,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	UPROPERTY()
 	APiece* CurrentPiece;
+	UPROPERTY()
+	APiece* NextPiece;
+	UPROPERTY()
+	APiece* NextNextPiece;
 	static ABoard* instancia;
 	static ABoard* GetInstancia();
 	void Rotate(); 
@@ -49,6 +53,8 @@ private:
 	UPROPERTY()
 		class AConstructPieceX* ConstructorPieceX;
 	UPROPERTY()
+		class ACruzDivine* CruzDivine;
+	UPROPERTY()
 		class APieceCDave* PieceCDave;
 	UPROPERTY()
 		class ADirectorPiece* DirectorPiece;
@@ -58,4 +64,9 @@ private:
 	float CoolLeft = 0.5f;
 	bool bGameOver = false;
 	bool CheckGameOver();
+	void EstablecerConstructPiece(int _numConstructPiece);
+	void CrearPieces();
+	int numCurrentPiece;
+	int numNextPiece;
+	int numNextNextPiece;
 };

@@ -26,7 +26,7 @@ public:
 	void TestRotate();
 	void MoveLeft();
 	void MoveRight();
-	bool MoveDown(bool PlaySound = true);
+	bool MoveDown();
 	void Dismiss();
 	bool CheckWillCollision(std::function<FVector(FVector OldLocation)> ChangeBeforeCheck);
 private:
@@ -39,4 +39,6 @@ public:
 	void EstablecerCoordenadasBlocks(std::vector<std::pair<float, float>> _CoordenadasBlocks);
 	void SpawnearBlocks();
 	void SpawnearBlocks(TArray<int> _Blocks);
+	void EliminarPiece();
+	TArray<int> ObtenerBlocks();
 };

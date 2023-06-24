@@ -26,14 +26,14 @@ void APieceCDave::ConstruirPiece()
 	CoordenadasBlocks = { {-20.0, 10.0}, {-10.0, 0.0}, {0.0, 10.0}, {10.0, 0.0} };
 	for (auto& Coordenada : CoordenadasBlocks)
 	{
-		NumBlocks = FMath::RandRange(1, 8);
+		NumBlocks = (FMath::RandRange(0, 7) == 1) ? ((FMath::RandRange(0, 1)) ? 7 : 8) : 10;
 		BlocksNums.Add(NumBlocks);
 	}
 }
 
-APiece* APieceCDave::ObtenerPiece()
+APiece* APieceCDave::ObtenerPiece(FVector _Location, FRotator _Rotation)
 {
-	Piece = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+	Piece = GetWorld()->SpawnActor<APiece>(_Location, _Rotation);
 	Piece->EstablecerCoordenadasBlocks(CoordenadasBlocks);
 	Piece->EstablecerNumsBlocks(BlocksNums);
 	BlocksNums.Empty();

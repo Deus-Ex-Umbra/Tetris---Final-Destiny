@@ -31,9 +31,9 @@ void AConstructPieceUnique::ConstruirPiece()
 	}
 }
 
-APiece* AConstructPieceUnique::ObtenerPiece()
+APiece* AConstructPieceUnique::ObtenerPiece(FVector _Location, FRotator _Rotation)
 {
-	Piece = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+	Piece = GetWorld()->SpawnActor<APiece>(_Location, _Rotation);
 	Piece->EstablecerCoordenadasBlocks(CoordenadasBlocks);
 	Piece->EstablecerNumsBlocks(BlocksNums);
 	BlocksNums.Empty();

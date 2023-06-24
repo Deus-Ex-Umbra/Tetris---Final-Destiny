@@ -16,6 +16,7 @@
 #include "ConstructPieceSum.h"
 #include "ConstructPieceUnique.h"
 #include "ConstructPieceX.h"
+#include "CruzDivine.h"
 #include "PieceCDave.h"
 
 ABoard::ABoard()
@@ -37,6 +38,7 @@ void ABoard::BeginPlay()
     ConstructorPieceSum = GetWorld()->SpawnActor<AConstructPieceSum>(AConstructPieceSum::StaticClass());
     ConstructorPieceUnique = GetWorld()->SpawnActor<AConstructPieceUnique>(AConstructPieceUnique::StaticClass());
     ConstructorPieceX = GetWorld()->SpawnActor<AConstructPieceX>(AConstructPieceX::StaticClass());
+    CruzDivine = GetWorld()->SpawnActor<ACruzDivine>(ACruzDivine::StaticClass());
     PieceCDave = GetWorld()->SpawnActor<APieceCDave>(APieceCDave::StaticClass());
     for (TActorIterator<APiece> it(GetWorld()); it; ++it)
     {
@@ -69,7 +71,7 @@ void ABoard::Tick(float DeltaTime)
     switch (Status)
     {
     case PS_NOT_INITED:
-        NewPiece();
+        CrearPieces();
         CoolLeft = CoolDown;
         Status = PS_MOVING;
         break;
@@ -81,6 +83,8 @@ void ABoard::Tick(float DeltaTime)
         }
         break;
     case PS_GOT_BOTTOM:
+        NextNextPiece->EliminarPiece();
+        NextPiece->EliminarPiece();
         CoolLeft -= DeltaTime;
         if (CoolLeft <= 0.0f)
         {
@@ -105,6 +109,7 @@ void ABoard::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
     PlayerInputComponent->BindAction("Rotate", IE_Pressed, this, &ABoard::Rotate);
+    PlayerInputComponent->BindAction("MoveDown", IE_Pressed, this, &ABoard::MoveDown);
     PlayerInputComponent->BindAction("MoveLeft", IE_Pressed, this, &ABoard::MoveLeft);
     PlayerInputComponent->BindAction("MoveRight", IE_Pressed, this, &ABoard::MoveRight);
     PlayerInputComponent->BindAction("MoveDownToEnd", IE_Pressed, this, &ABoard::MoveDownToEnd);
@@ -163,45 +168,29 @@ void ABoard::NewPiece()
         CurrentPiece->Dismiss();
         CurrentPiece->Destroy();
     }
-    switch (FMath::RandRange(1, 10))
+    numCurrentPiece = numNextPiece;
+    EstablecerConstructPiece(numCurrentPiece);
+    CurrentPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    CurrentPiece->SpawnearBlocks(NextPiece->ObtenerBlocks());
+    if (NextPiece)
     {
-    case 1:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceI);
-        break;
-    case 2:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceJ);
-        break;
-    case 3:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceL);
-        break;
-    case 4:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceO);
-        break;
-    case 5:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceS);
-        break;
-    case 6:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceT);
-        break;
-    case 7:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceZ);
-        break;
-    case 8:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceSum);
-        break;
-    case 9:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceUnique);
-        break;
-    case 10:
-        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceX);
-        break;
-    default:
-        DirectorPiece->EstablecerConstructorPiece(PieceCDave);
-        break;
+        NextPiece->Dismiss();
+        NextPiece->Destroy();
     }
-    DirectorPiece->ConstruirPiece();
-    CurrentPiece = DirectorPiece->ObtenerPiece();
-    CurrentPiece->SpawnearBlocks();
+    numNextPiece = numNextNextPiece;
+    EstablecerConstructPiece(numNextPiece);
+    NextPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NextPiece->SpawnearBlocks(NextNextPiece->ObtenerBlocks());
+    if (NextNextPiece)
+    {
+        NextNextPiece->Dismiss();
+        NextNextPiece->Destroy();
+    }
+    numNextNextPiece = FMath::RandRange(1, 10);
+    if (numNextNextPiece == 8) numNextNextPiece = (FMath::RandRange(0, 2) != 1) ? 9 : 8; 
+    EstablecerConstructPiece(numNextNextPiece);
+    NextNextPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 105.0f, 95.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NextNextPiece->SpawnearBlocks();
     bGameOver = CheckGameOver();
     if (bGameOver)
     {
@@ -294,4 +283,63 @@ bool ABoard::CheckGameOver()
         return true;
     }
     return CurrentPiece->CheckWillCollision([](FVector OldVector) { return OldVector; });
+}
+
+void ABoard::EstablecerConstructPiece(int _numConstructPiece)
+{
+    switch (_numConstructPiece)
+    {
+    case 1:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceI);
+        break;
+    case 2:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceJ);
+        break;
+    case 3:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceL);
+        break;
+    case 4:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceO);
+        break;
+    case 5:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceS);
+        break;
+    case 6:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceT);
+        break;
+    case 7:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceZ);
+        break;
+    case 8:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceSum);
+        break;
+    case 9:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceUnique);
+        break;
+    case 10:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceX);
+        break;
+    case 11:
+        DirectorPiece->EstablecerConstructorPiece(PieceCDave);
+		break;
+    default:
+        DirectorPiece->EstablecerConstructorPiece(CruzDivine);
+        break;
+    }
+}
+
+void ABoard::CrearPieces()
+{
+    numCurrentPiece = FMath::RandRange(1, 10);
+    EstablecerConstructPiece(numCurrentPiece);
+    CurrentPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    CurrentPiece->SpawnearBlocks();
+    numNextPiece = FMath::RandRange(1, 10);
+    EstablecerConstructPiece(numNextPiece);
+    NextPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NextPiece->SpawnearBlocks();
+    numNextNextPiece = FMath::RandRange(1, 10);
+    EstablecerConstructPiece(numNextNextPiece);
+    NextNextPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 105.0f, 95.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NextNextPiece->SpawnearBlocks();
 }

@@ -69,6 +69,7 @@ public: \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceUnique() { return STRUCT_OFFSET(ABoard, ConstructorPieceUnique); } \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceSum() { return STRUCT_OFFSET(ABoard, ConstructorPieceSum); } \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceX() { return STRUCT_OFFSET(ABoard, ConstructorPieceX); } \
+	FORCEINLINE static uint32 __PPO__CruzDivine() { return STRUCT_OFFSET(ABoard, CruzDivine); } \
 	FORCEINLINE static uint32 __PPO__PieceCDave() { return STRUCT_OFFSET(ABoard, PieceCDave); } \
 	FORCEINLINE static uint32 __PPO__DirectorPiece() { return STRUCT_OFFSET(ABoard, DirectorPiece); }
 

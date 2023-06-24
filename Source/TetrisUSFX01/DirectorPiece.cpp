@@ -26,8 +26,14 @@ void ADirectorPiece::ConstruirPiece()
 	ConstructorPiece->ConstruirPiece();
 }
 
-APiece* ADirectorPiece::ObtenerPiece()
+TArray<int> ADirectorPiece::ObtenerBlocksNums()
 {
-	return ConstructorPiece->ObtenerPiece();
+	return ConstructorPiece->ObtenerBlocksNums();
+}
+
+APiece* ADirectorPiece::ObtenerPiece(FVector _Location, FRotator _Rotation)
+{
+	ConstruirPiece();
+	return ConstructorPiece->ObtenerPiece(_Location, _Rotation);
 }
 

@@ -16,7 +16,7 @@ protected:
 public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void ConstruirPiece() override;
-	virtual class APiece* ObtenerPiece() override;
+	virtual class APiece* ObtenerPiece(FVector _Location, FRotator _Rotation) override;
 	virtual TArray<int> ObtenerBlocksNums() override;
 private:
 	class APiece* Piece;

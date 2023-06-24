@@ -1,4 +1,5 @@
 #include "BlockBrilloso.h"
+#include "BlockTransparente.h"
 
 ABlockBrilloso::ABlockBrilloso()
 {

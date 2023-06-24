@@ -19,6 +19,6 @@ protected:
 	int NumBlocks;
 public:
 	virtual void ConstruirPiece() = 0;
-	virtual class APiece* ObtenerPiece() = 0;
+	virtual class APiece* ObtenerPiece(FVector _Location, FRotator _Rotation) = 0;
 	virtual TArray<int> ObtenerBlocksNums() = 0;
 };

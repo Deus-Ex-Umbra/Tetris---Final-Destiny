@@ -6,6 +6,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "DrawDebugHelpers.h"
 #include "FabricaBlocks.h"
+#include "BlockTransparente.h"
 #include <vector>
 
 APiece::APiece()
@@ -41,15 +42,42 @@ void APiece::SpawnearBlocks()
     int indice = 0;
     for (auto& Coordenada : CoordenadasBlocks)
     {
-        ABlock* B = FabricaBlocks->FabricarBlock(BlocksNum[indice++], this->GetActorLocation(), FRotator(0.0f, 0.0f, 0.0f));
+        ABlock* B = FabricaBlocks->FabricarBlock(BlocksNum[indice], this->GetActorLocation(), FRotator(0.0f, 0.0f, 0.0f));
         Blocks.Add(B);
         B->SetActorLocation(FVector(0.0f, Coordenada.first, Coordenada.second));
         B->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
+        indice++;
 	}
 }
 
 void APiece::SpawnearBlocks(TArray<int> _Blocks)
 {
+    int indice = 0;
+    BlocksNum = _Blocks;
+    for (auto& Coordenada : CoordenadasBlocks)
+    {
+        ABlock* B = FabricaBlocks->FabricarBlock(BlocksNum[indice], this->GetActorLocation(), FRotator(0.0f, 0.0f, 0.0f));
+        Blocks.Add(B);
+        B->SetActorLocation(FVector(0.0f, Coordenada.first, Coordenada.second));
+        B->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
+        indice++;
+    }
+}
+
+void APiece::EliminarPiece()
+{
+    if (Blocks.Num() > 0)
+    {
+        for (auto& B : Blocks)
+        {
+            B->Destroy();
+		}
+	}
+}
+
+TArray<int> APiece::ObtenerBlocks()
+{
+    return BlocksNum;
 }
 
 void APiece::DrawDebugLines()
@@ -114,7 +142,7 @@ void APiece::MoveRight()
     }
 }
 
-bool APiece::MoveDown(bool PlaySound)
+bool APiece::MoveDown()
 {
     auto MoveVectorDown = [](FVector OldVector) {
         OldVector.Z -= 10.0f;
@@ -126,7 +154,9 @@ bool APiece::MoveDown(bool PlaySound)
         NewLocation.Z -= 10;
         SetActorLocation(NewLocation);
         return true;
-    } else {
+    }
+    else
+    {
         return false;
     }
 }
