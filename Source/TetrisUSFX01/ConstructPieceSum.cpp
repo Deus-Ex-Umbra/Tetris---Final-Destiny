@@ -25,7 +25,7 @@ void AConstructPieceSum::ConstruirPiece()
 	CoordenadasBlocks = { {0.0, 10.0}, {-10.0, 0.0}, {0.0, 0.0}, {10.0, 0.0}, {0.0, -10.0} };
 	for (auto& Coordenada : CoordenadasBlocks)
 	{
-		NumBlocks = (FMath::RandRange(0, 11) == 1) ? 8 : FMath::RandRange(7, 8);
+		NumBlocks = FMath::RandRange(7, 8);
 		BlocksNums.Add(NumBlocks);
 	}
 }

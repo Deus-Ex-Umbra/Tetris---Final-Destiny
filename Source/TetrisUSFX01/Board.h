@@ -33,6 +33,10 @@ public:
 private:
 	ABoard();
 	UPROPERTY()
+		class AEscenario* Escenario;
+	UPROPERTY()
+		class AFabricaEscenario* FabricaEscenario;
+	UPROPERTY()
 		class AConstructPieceI* ConstructorPieceI;
 	UPROPERTY()
 		class AConstructPieceJ* ConstructorPieceJ;

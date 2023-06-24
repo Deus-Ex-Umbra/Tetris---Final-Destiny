@@ -17,4 +17,5 @@ public:
 	TArray<UMaterialInterface*> NewMaterials;
 private:
 	float Tiempo;
+	float TiempoMagico;
 };

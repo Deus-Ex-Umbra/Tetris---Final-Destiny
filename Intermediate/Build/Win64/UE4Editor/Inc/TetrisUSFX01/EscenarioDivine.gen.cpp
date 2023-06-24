@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioDivine() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenarioDivine_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "EscenarioDivine.h" },
 		{ "ModuleRelativePath", "EscenarioDivine.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioDivine() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioDivine, 1012689337);
+	IMPLEMENT_CLASS(AEscenarioDivine, 2365006692);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioDivine>()
 	{
 		return AEscenarioDivine::StaticClass();

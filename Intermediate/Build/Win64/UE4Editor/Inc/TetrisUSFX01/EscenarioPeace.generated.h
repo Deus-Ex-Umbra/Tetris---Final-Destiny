@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TETRISUSFX01_EscenarioPeace_generated_h
 
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_SPARSE_DATA
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_RPC_WRAPPERS
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_INCLASS_NO_PURE_DECLS \
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_SPARSE_DATA
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_RPC_WRAPPERS
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_RPC_WRAPPERS_NO_PURE_DECLS
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEscenarioPeace(); \
 	friend struct Z_Construct_UClass_AEscenarioPeace_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AEscenarioPeace)
 
 
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_INCLASS \
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_INCLASS \
 private: \
 	static void StaticRegisterNativesAEscenarioPeace(); \
 	friend struct Z_Construct_UClass_AEscenarioPeace_Statics; \
@@ -34,9 +34,9 @@ public: \
 	DECLARE_SERIALIZER(AEscenarioPeace)
 
 
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_STANDARD_CONSTRUCTORS \
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AEscenarioPeace(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API AEscenarioPeace(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEscenarioPeace) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AEscenarioPeace); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEscenarioPeace); \
@@ -47,9 +47,7 @@ private: \
 public:
 
 
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AEscenarioPeace() { }; \
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEscenarioPeace(AEscenarioPeace&&); \
@@ -60,28 +58,28 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEscenarioPeace)
 
 
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_PRIVATE_PROPERTY_OFFSET
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_12_PROLOG
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_GENERATED_BODY_LEGACY \
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_PRIVATE_PROPERTY_OFFSET
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_6_PROLOG
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_PRIVATE_PROPERTY_OFFSET \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_SPARSE_DATA \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_RPC_WRAPPERS \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_INCLASS \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_STANDARD_CONSTRUCTORS \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_PRIVATE_PROPERTY_OFFSET \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_SPARSE_DATA \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_RPC_WRAPPERS \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_INCLASS \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_GENERATED_BODY \
+#define Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_PRIVATE_PROPERTY_OFFSET \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_SPARSE_DATA \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_INCLASS_NO_PURE_DECLS \
-	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_15_ENHANCED_CONSTRUCTORS \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_PRIVATE_PROPERTY_OFFSET \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_SPARSE_DATA \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_INCLASS_NO_PURE_DECLS \
+	Tetris___Final_Source_TetrisUSFX01_EscenarioPeace_h_9_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

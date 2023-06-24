@@ -11,12 +11,6 @@ public:
 	AEscenario();
 protected:
 	virtual void BeginPlay() override;
-public:	
-	virtual void Tick(float DeltaTime) override;
-	virtual void ObtenerNombreEscenario() PURE_VIRTUAL(AEscenario::ObtenerNombreEscenario(), );
-	virtual void CrearEscenario() PURE_VIRTUAL(AEscenario::CrearEscenario(), );
-	static UAudioComponent* MusicaEscenarioComponente;
-private:
 	UPROPERTY()
 		class UStaticMeshComponent* EscenarioMesh;
 	UPROPERTY()
@@ -28,4 +22,9 @@ private:
 	UPROPERTY()
 		class USoundBase* MusicaEscenario;
 	FString NombreEscenario;
+public:	
+	virtual void Tick(float DeltaTime) override;
+	virtual FString ObtenerNombreEscenario() PURE_VIRTUAL(AEscenario::ObtenerNombreEscenario(), return ""; );
+	virtual void CrearEscenario() PURE_VIRTUAL(AEscenario::CrearEscenario(), );
+	static UAudioComponent* MusicaEscenarioComponente;
 };

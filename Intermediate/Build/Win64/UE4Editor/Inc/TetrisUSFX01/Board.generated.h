@@ -59,6 +59,8 @@ public: \
 
 
 #define Tetris___Final_Source_TetrisUSFX01_Board_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__Escenario() { return STRUCT_OFFSET(ABoard, Escenario); } \
+	FORCEINLINE static uint32 __PPO__FabricaEscenario() { return STRUCT_OFFSET(ABoard, FabricaEscenario); } \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceI() { return STRUCT_OFFSET(ABoard, ConstructorPieceI); } \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceJ() { return STRUCT_OFFSET(ABoard, ConstructorPieceJ); } \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceL() { return STRUCT_OFFSET(ABoard, ConstructorPieceL); } \

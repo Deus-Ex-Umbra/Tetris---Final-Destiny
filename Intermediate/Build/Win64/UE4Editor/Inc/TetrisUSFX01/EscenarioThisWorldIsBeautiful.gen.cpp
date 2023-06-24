@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioThisWorldIsBeautiful() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenarioThisWorldIsBeautiful_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "EscenarioThisWorldIsBeautiful.h" },
 		{ "ModuleRelativePath", "EscenarioThisWorldIsBeautiful.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioThisWorldIsBeautiful() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioThisWorldIsBeautiful, 379132514);
+	IMPLEMENT_CLASS(AEscenarioThisWorldIsBeautiful, 3731840796);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioThisWorldIsBeautiful>()
 	{
 		return AEscenarioThisWorldIsBeautiful::StaticClass();

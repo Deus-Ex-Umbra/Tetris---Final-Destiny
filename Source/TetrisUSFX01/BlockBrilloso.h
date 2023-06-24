@@ -16,4 +16,5 @@ public:
 	virtual void CrearBlock() override;
 private:
 	float Tiempo;
+	float TiempoMagia;
 };

@@ -1,6 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
-/*Aquí se implementa el Singleton*/
 #include "TetrisUSFX01GameModeBase.h"
 #include "Board.h"
 #include "Camera/CameraActor.h"

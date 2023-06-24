@@ -70,7 +70,7 @@ void APiece::EliminarPiece()
     {
         for (auto& B : Blocks)
         {
-            B->Destroy();
+            if (B) B->Destroy();
 		}
 	}
 }

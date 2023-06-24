@@ -18,6 +18,8 @@
 #include "ConstructPieceX.h"
 #include "CruzDivine.h"
 #include "PieceCDave.h"
+#include "Escenario.h"
+#include "FabricaEscenario.h"
 
 ABoard::ABoard()
 {
@@ -40,6 +42,8 @@ void ABoard::BeginPlay()
     ConstructorPieceX = GetWorld()->SpawnActor<AConstructPieceX>(AConstructPieceX::StaticClass());
     CruzDivine = GetWorld()->SpawnActor<ACruzDivine>(ACruzDivine::StaticClass());
     PieceCDave = GetWorld()->SpawnActor<APieceCDave>(APieceCDave::StaticClass());
+    FabricaEscenario = GetWorld()->SpawnActor<AFabricaEscenario>(AFabricaEscenario::StaticClass());
+    Escenario = FabricaEscenario->FabricarEscenario(FMath::RandRange(1, 4));
     for (TActorIterator<APiece> it(GetWorld()); it; ++it)
     {
         if (it->GetFName() == TEXT("DissmissPieces"))

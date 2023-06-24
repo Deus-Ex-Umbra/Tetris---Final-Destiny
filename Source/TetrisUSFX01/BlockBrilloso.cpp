@@ -5,15 +5,16 @@ ABlockBrilloso::ABlockBrilloso()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh>Mesh(TEXT("StaticMesh'/Game/Mesh/BlockBrilloso.BlockBrilloso'"));
 	BlockMesh->SetStaticMesh(Mesh.Object);
+	BlockMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	BlockMesh->SetRelativeScale3D(FVector(1.0f, 1.0f, 1.0f));
 	Tiempo = 0.0f;
+	TiempoMagia = 0.0f;
 }
 
 void ABlockBrilloso::BeginPlay()
 {
 	Super::BeginPlay();
 	CrearBlock();
-	BlockMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-	BlockMesh->SetRelativeScale3D(FVector(1.0f, 1.0f, 1.0f));
 }
 
 void ABlockBrilloso::Tick(float DeltaTime)
@@ -31,6 +32,14 @@ void ABlockBrilloso::Tick(float DeltaTime)
 		}
 		Tiempo = 0.0f;
 	}
+	if (TiempoMagia >= 15.0f) {
+		FVector PosicionActual = this->GetActorLocation();
+		ABlockTransparente* Block = GetWorld()->SpawnActor<ABlockTransparente>(PosicionActual, this->GetActorRotation());
+		ABlockTransparente* BlockD = (PosicionActual.Y >= 39.0f) ? GetWorld()->SpawnActor<ABlockTransparente>(PosicionActual + FVector(0.0f, 0.0f, 10.0f), this->GetActorRotation()) : GetWorld()->SpawnActor<ABlockTransparente>(PosicionActual + FVector(0.0f, 10.0f, 0.0f), this->GetActorRotation());
+		ABlockTransparente* BlockI = (PosicionActual.Y <= -39.0f) ? GetWorld()->SpawnActor<ABlockTransparente>(PosicionActual + FVector(0.0f, 0.0f, 10.0f), this->GetActorRotation()) : GetWorld()->SpawnActor<ABlockTransparente>(PosicionActual - FVector(0.0f, 10.0f, 0.0f), this->GetActorRotation());
+		TiempoMagia = 0.0f;
+	}
+	TiempoMagia += DeltaTime;
 	Tiempo += DeltaTime;
 }
 

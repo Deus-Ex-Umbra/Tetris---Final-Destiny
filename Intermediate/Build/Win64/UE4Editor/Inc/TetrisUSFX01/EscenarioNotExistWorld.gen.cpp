@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioNotExistWorld() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenarioNotExistWorld_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "EscenarioNotExistWorld.h" },
 		{ "ModuleRelativePath", "EscenarioNotExistWorld.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioNotExistWorld() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioNotExistWorld, 4289539191);
+	IMPLEMENT_CLASS(AEscenarioNotExistWorld, 3379571947);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioNotExistWorld>()
 	{
 		return AEscenarioNotExistWorld::StaticClass();

@@ -26,7 +26,7 @@ void AConstructPieceZ::ConstruirPiece()
 	CoordenadasBlocks = { {-10.0, 0.0}, {0.0, 0.0}, {0.0, -10.0}, {10.0, -10.0} };
 	for (auto& Coordenada : CoordenadasBlocks)
 	{
-		NumBlocks = (FMath::RandRange(0, 11) == 1) ? 8 : FMath::RandRange(3, 6);
+		NumBlocks = (FMath::RandRange(0, 18) == 13) ? 8 : FMath::RandRange(3, 6);
 		BlocksNums.Add(NumBlocks);
 	}
 }

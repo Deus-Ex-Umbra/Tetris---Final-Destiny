@@ -1,27 +1,54 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "FabricaEscenario.h"
+#include "Escenario.h"
+#include "EscenarioPeace.h"
+#include "EscenarioNotExistWorld.h"
+#include "EscenarioThisWorldIsBeautiful.h"
+#include "EscenarioDivine.h"
 
-// Sets default values
 AFabricaEscenario::AFabricaEscenario()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
-// Called when the game starts or when spawned
 void AFabricaEscenario::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
 void AFabricaEscenario::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
 
+AEscenario* AFabricaEscenario::FabricarEscenario(int _numEscenario)
+{
+	switch (_numEscenario)
+	{
+	case 1:
+		return GetWorld()->SpawnActor<AEscenarioThisWorldIsBeautiful>();
+		break;
+	case 2:
+		return GetWorld()->SpawnActor<AEscenarioPeace>();
+		break;
+	case 3:
+		return GetWorld()->SpawnActor<AEscenarioNotExistWorld>();
+		break;
+	default:
+		if (FMath::RandRange(1, 32) == 26) return GetWorld()->SpawnActor<AEscenarioDivine>();
+		else switch (FMath::RandRange(1, 3))
+		{
+		case 1:
+			return GetWorld()->SpawnActor<AEscenarioThisWorldIsBeautiful>();
+			break;
+		case 2:
+			return GetWorld()->SpawnActor<AEscenarioPeace>();
+			break;
+		default:
+			return GetWorld()->SpawnActor<AEscenarioNotExistWorld>();
+			break;
+		}
+		break;
+	};
 }
 

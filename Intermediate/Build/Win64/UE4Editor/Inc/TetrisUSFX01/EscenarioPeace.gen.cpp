@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioPeace() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenarioPeace_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "EscenarioPeace.h" },
 		{ "ModuleRelativePath", "EscenarioPeace.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioPeace() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioPeace, 1779070190);
+	IMPLEMENT_CLASS(AEscenarioPeace, 2926019613);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioPeace>()
 	{
 		return AEscenarioPeace::StaticClass();

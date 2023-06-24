@@ -5,6 +5,7 @@ ABlockEspecial::ABlockEspecial()
 	static ConstructorHelpers::FObjectFinder<UStaticMesh>Mesh(TEXT("StaticMesh'/Game/Mesh/BlockLoco.BlockLoco'"));
 	BlockMesh->SetStaticMesh(Mesh.Object);
 	Tiempo = 0.0f;
+	TiempoMagico = 0.0f;
 	NewMaterials = {
 		LoadObject<UMaterial>(nullptr, TEXT("Material'/Game/Mesh/M_Glass.M_Glass'")),
 		LoadObject<UMaterial>(nullptr, TEXT("Material'/Game/Mesh/Hielo_Mat.Hielo_Mat'")),
@@ -15,14 +16,14 @@ ABlockEspecial::ABlockEspecial()
 		LoadObject<UMaterial>(nullptr, TEXT("Material'/Game/Mesh/Material_5.Material_5'")),
 		LoadObject<UMaterial>(nullptr, TEXT("Material'/Game/Mesh/Material_005.Material_005'"))
 	};
+	BlockMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	BlockMesh->SetRelativeScale3D(FVector(1.0f, 1.0f, 1.0f));
 }
 
 void ABlockEspecial::BeginPlay()
 {
 	Super::BeginPlay();
 	CrearBlock();
-	BlockMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-	BlockMesh->SetRelativeScale3D(FVector(1.0f, 1.0f, 1.0f));
 }
 
 void ABlockEspecial::Tick(float DeltaTime)
@@ -32,6 +33,12 @@ void ABlockEspecial::Tick(float DeltaTime)
 		BlockMesh->SetMaterial(FMath::RandRange(0, 1), NewMaterials[FMath::RandRange(0, NewMaterials.Num() - 1)]);
 		Tiempo = 0.0f;
 	}
+	if (TiempoMagico >= 1.0f) {
+		FVector LocationActual = this->GetActorLocation();
+		FVector NuevaLocacion = (LocationActual.Y >= 40.0f || LocationActual.Y <= -40.0f) ? ((LocationActual.Z >= 190.0f || LocationActual.Z <= 10.0f) ? LocationActual : LocationActual + FVector(0.0f, 0.0f, FMath::RandRange(-1, 1) * 10) ) : LocationActual + FVector(0.0f, FMath::RandRange(-1, 1) * 10, FMath::RandRange(-1, 1) * 10);
+		this->SetActorLocation(NuevaLocacion);
+	}
+	TiempoMagico += DeltaTime;
 	Tiempo += DeltaTime;
 }
 

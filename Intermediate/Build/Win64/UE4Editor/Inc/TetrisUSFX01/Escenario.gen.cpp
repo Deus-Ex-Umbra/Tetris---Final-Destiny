@@ -74,32 +74,32 @@ void EmptyLinkFunctionForGeneratedCodeEscenario() {}
 		{ "ModuleRelativePath", "Escenario.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMesh = { "EscenarioMesh", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, EscenarioMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMesh_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMesh = { "EscenarioMesh", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, EscenarioMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMesh_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMesh_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Escenario.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMesh = { "LimitePiezasMesh", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, LimitePiezasMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMesh_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMesh = { "LimitePiezasMesh", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, LimitePiezasMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMesh_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMaterial_MetaData[] = {
 		{ "ModuleRelativePath", "Escenario.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMaterial = { "EscenarioMaterial", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, EscenarioMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMaterial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMaterial_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMaterial = { "EscenarioMaterial", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, EscenarioMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMaterial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMaterial_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMaterial_MetaData[] = {
 		{ "ModuleRelativePath", "Escenario.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMaterial = { "LimitePiezasMaterial", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, LimitePiezasMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMaterial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMaterial_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMaterial = { "LimitePiezasMaterial", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, LimitePiezasMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMaterial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMaterial_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenario_Statics::NewProp_MusicaEscenario_MetaData[] = {
 		{ "ModuleRelativePath", "Escenario.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_MusicaEscenario = { "MusicaEscenario", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, MusicaEscenario), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_MusicaEscenario_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_MusicaEscenario_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenario_Statics::NewProp_MusicaEscenario = { "MusicaEscenario", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenario, MusicaEscenario), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenario_Statics::NewProp_MusicaEscenario_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenario_Statics::NewProp_MusicaEscenario_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEscenario_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEscenario_Statics::NewProp_EscenarioMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEscenario_Statics::NewProp_LimitePiezasMesh,
@@ -134,7 +134,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenario() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenario, 1705356957);
+	IMPLEMENT_CLASS(AEscenario, 1435682998);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenario>()
 	{
 		return AEscenario::StaticClass();
