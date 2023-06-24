@@ -1,27 +1,66 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "ConstructPieceZ.h"
+#include "Piece.h"
+#include "Block.h"
+#include "FabricaBlocks.h"
 
-// Sets default values
 AConstructPieceZ::AConstructPieceZ()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	PieceScene = CreateDefaultSubobject<USceneComponent>(TEXT("PieceScene"));
+	RootComponent = PieceScene;
 }
 
-// Called when the game starts or when spawned
 void AConstructPieceZ::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	Piece = GetWorld()->SpawnActor<APiece>(APiece::StaticClass());
+	Piece->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
+	FabricaBlocks = GetWorld()->SpawnActor<AFabricaBlocks>(AFabricaBlocks::StaticClass());
 }
 
-// Called every frame
 void AConstructPieceZ::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
 
+void AConstructPieceZ::SpawnearBlocks()
+{
+	CoordenadasBlocks = { {-10.0, 0.0}, {0.0, 0.0}, {0.0, -10.0}, {10.0, -10.0} };
+	for (auto& Coordenada : CoordenadasBlocks)
+	{
+		NumBlocks = FMath::RandRange(1, 8);
+		BlocksNums.Add(NumBlocks);
+		ABlock* B = FabricaBlocks->FabricarBlock(NumBlocks, this->GetActorLocation(), FRotator(0.0f, 0.0f, 0.0f));
+		Blocks.Add(B);
+		B->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
+		B->SetActorRelativeLocation(FVector(0.0, Coordenada.first, Coordenada.second));
+	}
+}
+
+void AConstructPieceZ::SpawnearBlocks(TArray<int> _Blocks)
+{
+	CoordenadasBlocks = { {-10.0, 0.0}, {0.0, 0.0}, {0.0, -10.0}, {10.0, -10.0} };
+	int indice = 0;
+	for (auto& Coordenada : CoordenadasBlocks)
+	{
+		ABlock* B = FabricaBlocks->FabricarBlock(_Blocks[indice], this->GetActorLocation(), FRotator(0.0f, 0.0f, 0.0f));
+		Blocks.Add(B);
+		B->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
+		B->SetActorRelativeLocation(FVector(0.0, Coordenada.first, Coordenada.second));
+		indice++;
+	}
+}
+
+APiece* AConstructPieceZ::ObtenerPiece()
+{
+	Piece->EstablecerBlocks(Blocks);
+	Piece->EstablecerCoordenadasBlocks(CoordenadasBlocks);
+	Piece->EstablecerNumsBlocks(BlocksNums);
+	return Piece;
+}
+
+TArray<int> AConstructPieceZ::ObtenerBlocksNums()
+{
+	return BlocksNums;
 }
 

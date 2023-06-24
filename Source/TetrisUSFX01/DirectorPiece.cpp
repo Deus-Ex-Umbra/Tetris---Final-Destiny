@@ -18,19 +18,21 @@ void ADirectorPiece::Tick(float DeltaTime)
 
 void ADirectorPiece::EstablecerConstructorPiece(IConstructorPiece* _ConstructorPiece)
 {
-	
+	ConstructorPiece = _ConstructorPiece;
 }
 
 void ADirectorPiece::ConstruirPiece()
 {
+	ConstructorPiece->SpawnearBlocks();
 }
 
-void ADirectorPiece::ConstruirPiece(TArray<class ABlock*> _Blocks)
+void ADirectorPiece::ConstruirPiece(TArray<int> _Blocks)
 {
+	ConstructorPiece->SpawnearBlocks(_Blocks);
 }
 
 APiece* ADirectorPiece::ObtenerPiece()
 {
-	return nullptr;
+	return ConstructorPiece->ObtenerPiece();
 }
 

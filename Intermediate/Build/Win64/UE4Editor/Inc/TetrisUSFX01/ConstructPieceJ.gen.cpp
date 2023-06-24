@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceJ() {}
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AConstructPieceJ();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_UConstructorPiece_NoRegister();
 // End Cross Module References
 	void AConstructPieceJ::StaticRegisterNativesAConstructPieceJ()
 	{
@@ -31,6 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceJ() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +46,9 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceJ() {}
 		{ "ModuleRelativePath", "ConstructPieceJ.h" },
 	};
 #endif
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AConstructPieceJ_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UConstructorPiece_NoRegister, (int32)VTABLE_OFFSET(AConstructPieceJ, IConstructorPiece), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AConstructPieceJ_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AConstructPieceJ>::IsAbstract,
 	};
@@ -54,11 +59,11 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceJ() {}
 		DependentSingletons,
 		nullptr,
 		nullptr,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		0,
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AConstructPieceJ_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AConstructPieceJ_Statics::Class_MetaDataParams))
 	};
@@ -71,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceJ() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AConstructPieceJ, 3509750493);
+	IMPLEMENT_CLASS(AConstructPieceJ, 2294202811);
 	template<> TETRISUSFX01_API UClass* StaticClass<AConstructPieceJ>()
 	{
 		return AConstructPieceJ::StaticClass();

@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceO() {}
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AConstructPieceO();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_UConstructorPiece_NoRegister();
 // End Cross Module References
 	void AConstructPieceO::StaticRegisterNativesAConstructPieceO()
 	{
@@ -31,6 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceO() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +46,9 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceO() {}
 		{ "ModuleRelativePath", "ConstructPieceO.h" },
 	};
 #endif
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AConstructPieceO_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UConstructorPiece_NoRegister, (int32)VTABLE_OFFSET(AConstructPieceO, IConstructorPiece), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AConstructPieceO_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AConstructPieceO>::IsAbstract,
 	};
@@ -54,11 +59,11 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceO() {}
 		DependentSingletons,
 		nullptr,
 		nullptr,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		0,
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AConstructPieceO_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AConstructPieceO_Statics::Class_MetaDataParams))
 	};
@@ -71,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructPieceO() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AConstructPieceO, 2957607658);
+	IMPLEMENT_CLASS(AConstructPieceO, 910710070);
 	template<> TETRISUSFX01_API UClass* StaticClass<AConstructPieceO>()
 	{
 		return AConstructPieceO::StaticClass();

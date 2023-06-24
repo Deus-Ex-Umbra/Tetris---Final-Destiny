@@ -2,4 +2,15 @@ C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\Devel
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\USUARIO\Desktop\Tetris - Final\Source\TetrisUSFX01/ConstructPieceUnique.h
+C:\Users\USUARIO\Desktop\Tetris - Final\Source\TetrisUSFX01\ConstructorPiece.h
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\vector
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\xmemory
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\limits
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\cfloat
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\cwchar
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\cstdio
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\isa_availability.h
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\xutility
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE\__msvc_sanitizer_annotate_container.hpp
+C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\Inc\TetrisUSFX01\ConstructorPiece.generated.h
 C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\Inc\TetrisUSFX01\ConstructPieceUnique.generated.h

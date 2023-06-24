@@ -17,6 +17,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	void EstablecerConstructorPiece(class IConstructorPiece* _ConstructorPiece);
 	void ConstruirPiece();
-	void ConstruirPiece(TArray<class ABlock*> _Blocks);
+	void ConstruirPiece(TArray<int> _Blocks);
 	class APiece* ObtenerPiece();
 };

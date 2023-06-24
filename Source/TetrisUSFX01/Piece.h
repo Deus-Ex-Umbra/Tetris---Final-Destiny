@@ -31,11 +31,10 @@ public:
 	bool CheckWillCollision(std::function<FVector(FVector OldLocation)> ChangeBeforeCheck);
 private:
 	TArray<ABlock*> Blocks;
-	TArray<int*> BlocksNum;
+	TArray<int> BlocksNum;
 	std::vector<std::pair<float, float>> CoordenadasBlocks;
 	class AFabricaBlocks* FabricaBlocks;
 public:
-	void SpawnBlocks();
 	void EstablecerBlocks(TArray<ABlock*> _Blocks);
 	void EstablecerNumsBlocks(TArray<int> _BlocksNum);
 	void EstablecerCoordenadasBlocks(std::vector<std::pair<float, float>> _CoordenadasBlocks);

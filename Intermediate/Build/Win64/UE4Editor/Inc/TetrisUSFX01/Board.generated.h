@@ -58,7 +58,21 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABoard)
 
 
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_PRIVATE_PROPERTY_OFFSET
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceI() { return STRUCT_OFFSET(ABoard, ConstructorPieceI); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceJ() { return STRUCT_OFFSET(ABoard, ConstructorPieceJ); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceL() { return STRUCT_OFFSET(ABoard, ConstructorPieceL); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceO() { return STRUCT_OFFSET(ABoard, ConstructorPieceO); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceS() { return STRUCT_OFFSET(ABoard, ConstructorPieceS); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceT() { return STRUCT_OFFSET(ABoard, ConstructorPieceT); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceZ() { return STRUCT_OFFSET(ABoard, ConstructorPieceZ); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceUnique() { return STRUCT_OFFSET(ABoard, ConstructorPieceUnique); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceSum() { return STRUCT_OFFSET(ABoard, ConstructorPieceSum); } \
+	FORCEINLINE static uint32 __PPO__ConstructorPieceX() { return STRUCT_OFFSET(ABoard, ConstructorPieceX); } \
+	FORCEINLINE static uint32 __PPO__PieceCDave() { return STRUCT_OFFSET(ABoard, PieceCDave); } \
+	FORCEINLINE static uint32 __PPO__DirectorPiece() { return STRUCT_OFFSET(ABoard, DirectorPiece); }
+
+
 #define Tetris___Final_Source_TetrisUSFX01_Board_h_9_PROLOG
 #define Tetris___Final_Source_TetrisUSFX01_Board_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

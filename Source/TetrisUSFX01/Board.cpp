@@ -5,6 +5,18 @@
 #include "EngineUtils.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
+#include "DirectorPiece.h"
+#include "ConstructPieceI.h"
+#include "ConstructPieceJ.h"
+#include "ConstructPieceL.h"
+#include "ConstructPieceO.h"
+#include "ConstructPieceS.h"
+#include "ConstructPieceT.h"
+#include "ConstructPieceZ.h"
+#include "ConstructPieceSum.h"
+#include "ConstructPieceUnique.h"
+#include "ConstructPieceX.h"
+#include "PieceCDave.h"
 
 ABoard::ABoard()
 {
@@ -14,7 +26,18 @@ ABoard::ABoard()
 void ABoard::BeginPlay()
 {
 	Super::BeginPlay();
-	
+    DirectorPiece = GetWorld()->SpawnActor<ADirectorPiece>(ADirectorPiece::StaticClass());
+    ConstructorPieceI = GetWorld()->SpawnActor<AConstructPieceI>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceJ = GetWorld()->SpawnActor<AConstructPieceJ>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceL = GetWorld()->SpawnActor<AConstructPieceL>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceO = GetWorld()->SpawnActor<AConstructPieceO>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceS = GetWorld()->SpawnActor<AConstructPieceS>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceT = GetWorld()->SpawnActor<AConstructPieceT>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceZ = GetWorld()->SpawnActor<AConstructPieceZ>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceSum = GetWorld()->SpawnActor<AConstructPieceSum>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceUnique = GetWorld()->SpawnActor<AConstructPieceUnique>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    ConstructorPieceX = GetWorld()->SpawnActor<AConstructPieceX>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    PieceCDave = GetWorld()->SpawnActor<APieceCDave>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
     for (TActorIterator<APiece> it(GetWorld()); it; ++it)
     {
         if (it->GetFName() == TEXT("DissmissPieces"))
@@ -140,10 +163,43 @@ void ABoard::NewPiece()
         CurrentPiece->Dismiss();
         CurrentPiece->Destroy();
     }
-
-    FVector Location(0.0, 5.0, 195.0);
-    FRotator Rotation(0.0, 0.0, 0.0);
-    CurrentPiece = GetWorld()->SpawnActor<APiece>(Location, Rotation);
+    switch (FMath::RandRange(1, 10))
+    {
+    case 1:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceI);
+        break;
+    case 2:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceJ);
+        break;
+    case 3:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceL);
+        break;
+    case 4:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceO);
+        break;
+    case 5:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceS);
+        break;
+    case 6:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceT);
+        break;
+    case 7:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceZ);
+        break;
+    case 8:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceSum);
+        break;
+    case 9:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceUnique);
+        break;
+    case 10:
+        DirectorPiece->EstablecerConstructorPiece(ConstructorPieceX);
+        break;
+    default:
+        DirectorPiece->EstablecerConstructorPiece(PieceCDave);
+        break;
+    }
+    CurrentPiece = DirectorPiece->ObtenerPiece();
     bGameOver = CheckGameOver();
     if (bGameOver)
     {

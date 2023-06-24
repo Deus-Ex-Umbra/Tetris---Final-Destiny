@@ -28,6 +28,30 @@ public:
 	void MoveDownToEnd();
 private:
 	ABoard();
+	UPROPERTY()
+		class AConstructPieceI* ConstructorPieceI;
+	UPROPERTY()
+		class AConstructPieceJ* ConstructorPieceJ;
+	UPROPERTY()
+		class AConstructPieceL* ConstructorPieceL;
+	UPROPERTY()
+		class AConstructPieceO* ConstructorPieceO;
+	UPROPERTY()
+		class AConstructPieceS* ConstructorPieceS;
+	UPROPERTY()
+		class AConstructPieceT* ConstructorPieceT;
+	UPROPERTY()
+		class AConstructPieceZ* ConstructorPieceZ;
+	UPROPERTY()
+		class AConstructPieceUnique* ConstructorPieceUnique;
+	UPROPERTY()
+		class AConstructPieceSum* ConstructorPieceSum;
+	UPROPERTY()
+		class AConstructPieceX* ConstructorPieceX;
+	UPROPERTY()
+		class APieceCDave* PieceCDave;
+	UPROPERTY()
+		class ADirectorPiece* DirectorPiece;
 	enum PieceStatus { PS_NOT_INITED, PS_MOVING, PS_GOT_BOTTOM };
 	PieceStatus Status = PS_NOT_INITED;
 	const float CoolDown = 0.5f;

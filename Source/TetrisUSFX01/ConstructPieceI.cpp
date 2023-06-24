@@ -6,6 +6,8 @@
 AConstructPieceI::AConstructPieceI()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	PieceScene = CreateDefaultSubobject<USceneComponent>(TEXT("PieceScene"));
+	RootComponent = PieceScene;
 }
 
 void AConstructPieceI::BeginPlay()

@@ -19,37 +19,11 @@ void APiece::BeginPlay()
 {
 	Super::BeginPlay();
     FabricaBlocks = GetWorld()->SpawnActor<AFabricaBlocks>(AFabricaBlocks::StaticClass());
-    SpawnBlocks();
 }
 
 void APiece::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-}
-
-void APiece::SpawnBlocks()
-{
-    std::vector<std::vector<std::pair<float, float>>> Shapes =
-    {
-        {{-20.0, 0.0}, {-10.0, 0.0}, {0.0, 0.0}, {10.0, 0.0}}, //I
-        {{0.0, 10.0}, {0.0, 0.0}, {10.0, 0.0}, {20.0, 0.0}}, //J
-        {{-20.0, 0.0}, {-10.0, 0.0}, {0.0, 0.0}, {0.0, 10.0}}, //L
-        {{0.0, 0.0}, {10.0, 0.0}, {0.0, -10.0}, {10.0, -10.0}}, //O
-        {{-10.0, -10.0}, {0.0, -10.0}, {0.0, 0.0}, {10.0, 0.0}}, //S
-        {{-10.0, 0.0}, {0.0, 0.0}, {0.0, 10.0}, {10.0, 0.0}}, //T
-        {{-10.0, 0.0}, {0.0, 0.0}, {0.0, -10.0}, {10.0, -10.0}}, //Z
-        /*{{-20.0, 10.0}, {-10.0, 0.0}, {0.0, 10.0}, {10.0, 0.0}},*/
-    };
-    const int Index = FMath::RandRange(0, Shapes.size() - 1);
-    UE_LOG(LogTemp, Warning, TEXT("index=%d"), Index);
-    const std::vector<std::pair<float, float>>& YZs = Shapes[Index];
-    for (auto&& YZ : YZs)
-    {
-        ABlock* B = FabricaBlocks->FabricarBlock(FMath::RandRange(1, 8), this->GetActorLocation(), FRotator(0.0, 0.0, 0.0));
-        Blocks.Add(B);
-        B->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
-        B->SetActorRelativeLocation(FVector(0.0, YZ.first, YZ.second));
-    }
 }
 
 void APiece::EstablecerBlocks(TArray<ABlock*> _Blocks)
