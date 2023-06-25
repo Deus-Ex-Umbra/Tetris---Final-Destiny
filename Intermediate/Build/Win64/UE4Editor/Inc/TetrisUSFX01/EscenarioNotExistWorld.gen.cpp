@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioNotExistWorld() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioNotExistWorld, 3379571947);
+	IMPLEMENT_CLASS(AEscenarioNotExistWorld, 800627122);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioNotExistWorld>()
 	{
 		return AEscenarioNotExistWorld::StaticClass();

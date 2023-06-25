@@ -27,5 +27,11 @@ void ATetrisUSFX01GameModeBase::BeginPlay()
 void ATetrisUSFX01GameModeBase::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
+    if (AControladorTetris::Restart) {
+		AControladorTetris::Restart = false;
+        AControladorTetris::Puntaje = 0;
+        AControladorTetris::Lineas = 0;
+		UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+	}
 }
 

@@ -50,9 +50,10 @@ void APiece::SpawnearBlocks()
 	}
 }
 
-void APiece::SpawnearBlocks(TArray<int> _Blocks)
+void APiece::SpawnearBlocks(std::vector<std::pair<float, float>> _Coordenadas, TArray<int> _Blocks)
 {
     int indice = 0;
+    CoordenadasBlocks = _Coordenadas;
     BlocksNum = _Blocks;
     for (auto& Coordenada : CoordenadasBlocks)
     {
@@ -70,7 +71,7 @@ void APiece::EliminarPiece()
     {
         for (auto& B : Blocks)
         {
-            if (B) B->Destroy();
+            if (B) { B->Destroy(); B = nullptr; }
 		}
 	}
 }
@@ -78,6 +79,11 @@ void APiece::EliminarPiece()
 TArray<int> APiece::ObtenerBlocks()
 {
     return BlocksNum;
+}
+
+std::vector<std::pair<float, float>> APiece::ObtenerCoordenadasBlocks()
+{
+    return CoordenadasBlocks;
 }
 
 void APiece::DrawDebugLines()

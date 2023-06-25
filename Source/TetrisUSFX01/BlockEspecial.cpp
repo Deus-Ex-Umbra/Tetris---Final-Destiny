@@ -6,6 +6,7 @@ ABlockEspecial::ABlockEspecial()
 	BlockMesh->SetStaticMesh(Mesh.Object);
 	Tiempo = 0.0f;
 	TiempoMagico = 0.0f;
+	TiempoControl = 0.0f;
 	NewMaterials = {
 		LoadObject<UMaterial>(nullptr, TEXT("Material'/Game/Mesh/M_Glass.M_Glass'")),
 		LoadObject<UMaterial>(nullptr, TEXT("Material'/Game/Mesh/Hielo_Mat.Hielo_Mat'")),
@@ -29,14 +30,14 @@ void ABlockEspecial::BeginPlay()
 void ABlockEspecial::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (Tiempo >= 0.2f) {
+	if (Tiempo >= 0.4f) {
 		BlockMesh->SetMaterial(FMath::RandRange(0, 1), NewMaterials[FMath::RandRange(0, NewMaterials.Num() - 1)]);
 		Tiempo = 0.0f;
 	}
-	if (TiempoMagico >= 1.0f) {
+	if (TiempoMagico >= 2.5f) {
 		FVector LocationActual = this->GetActorLocation();
-		FVector NuevaLocacion = (LocationActual.Y >= 40.0f || LocationActual.Y <= -40.0f) ? ((LocationActual.Z >= 190.0f || LocationActual.Z <= 10.0f) ? LocationActual : LocationActual + FVector(0.0f, 0.0f, FMath::RandRange(-1, 1) * 10) ) : LocationActual + FVector(0.0f, FMath::RandRange(-1, 1) * 10, FMath::RandRange(-1, 1) * 10);
-		this->SetActorLocation(NuevaLocacion);
+		FVector NuevaLocacion = (LocationActual.Y >= 40.0f || LocationActual.Y <= -40.0f) ? ((LocationActual.Z >= 190.0f || LocationActual.Z <= 10.0f) ? LocationActual : LocationActual + FVector(0.0f, 0.0f, FMath::RandRange(-1, 1) * 10)) : LocationActual + FVector(0.0f, FMath::RandRange(-1, 1) * 10, FMath::RandRange(-1, 1) * 10);			this->SetActorLocation(NuevaLocacion);
+		TiempoMagico = 0.0f;
 	}
 	TiempoMagico += DeltaTime;
 	Tiempo += DeltaTime;

@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Escenario.h"
+#include "Components/AudioComponent.h"
 #include "EscenarioPeace.generated.h"
 
 UCLASS()

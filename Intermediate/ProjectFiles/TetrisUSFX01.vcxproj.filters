@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TetrisUSFX01.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{2FA979B1-5B7A-4F87-800C-59F1397198D5}</UniqueIdentifier>
+      <UniqueIdentifier>{E4BB5C21-E384-46F6-8754-C2F5E9485B05}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TetrisUSFX01.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{9DDC6192-6196-42FD-8608-54CD1CE0F3DC}</UniqueIdentifier>
+      <UniqueIdentifier>{D95BD8B6-E9C4-4F82-9BA1-2C5960E0282C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\TetrisUSFX01">
-      <UniqueIdentifier>{BD419949-7044-4907-8BD1-4631AE9C2950}</UniqueIdentifier>
+      <UniqueIdentifier>{D7F2E56A-BDE5-492B-80E1-A1692F1C717B}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\TetrisUSFX01\Block.cpp">
       <Filter>Source\TetrisUSFX01</Filter>
@@ -170,6 +170,12 @@
     <ClInclude Include="..\..\Source\TetrisUSFX01\ConstructPieceZ.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\ControladorTetris.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\ControladorTetris.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\CruzDivine.cpp">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClCompile>
@@ -210,6 +216,60 @@
       <Filter>Source\TetrisUSFX01</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TetrisUSFX01\EscenarioThisWorldIsBeautiful.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoCelestialCantaible.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoCelestialCantaible.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoEscenario.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoEscenario.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoFegefeuerSospenso.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoFegefeuerSospenso.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoFinalPresto.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoFinalPresto.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoIntermedioAdagio.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoIntermedioAdagio.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoIntermedioAllegro.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoIntermedioAllegro.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoIntermedioLento.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoIntermedioLento.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoJuegoGanado.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoJuegoGanado.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstadoJuegoPerdido.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoJuegoPerdido.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\FabricaBlocks.cpp">

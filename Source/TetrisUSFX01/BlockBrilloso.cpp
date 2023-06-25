@@ -32,7 +32,7 @@ void ABlockBrilloso::Tick(float DeltaTime)
 		}
 		Tiempo = 0.0f;
 	}
-	if (TiempoMagia >= 15.0f) {
+	if (TiempoMagia >= 20.0f) {
 		FVector PosicionActual = this->GetActorLocation();
 		ABlockTransparente* Block = GetWorld()->SpawnActor<ABlockTransparente>(PosicionActual, this->GetActorRotation());
 		ABlockTransparente* BlockD = (PosicionActual.Y >= 39.0f) ? GetWorld()->SpawnActor<ABlockTransparente>(PosicionActual + FVector(0.0f, 0.0f, 10.0f), this->GetActorRotation()) : GetWorld()->SpawnActor<ABlockTransparente>(PosicionActual + FVector(0.0f, 10.0f, 0.0f), this->GetActorRotation());

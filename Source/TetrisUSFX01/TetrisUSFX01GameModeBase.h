@@ -1,10 +1,8 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 #pragma once
-
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "Piece.h"
+#include "ControladorTetris.h"
 #include "TetrisUSFX01GameModeBase.generated.h"
 
 UCLASS()

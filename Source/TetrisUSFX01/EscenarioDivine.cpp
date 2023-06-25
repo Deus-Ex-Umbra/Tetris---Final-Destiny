@@ -1,5 +1,5 @@
 #include "EscenarioDivine.h"
-
+#include "ControladorTetris.h"
 AEscenarioDivine::AEscenarioDivine()
 {
 	NombreEscenario = "Divine";
@@ -11,11 +11,15 @@ AEscenarioDivine::AEscenarioDivine()
 	EscenarioMesh->SetStaticMesh(EscenarioNMesh.Object);
 	LimitePiezasMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/Foto_pared_de_fuego_ardiente_Mat.Foto_pared_de_fuego_ardiente_Mat'"));
 	EscenarioMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/EscenarioInfierno_Mat.EscenarioInfierno_Mat'"));
+	static ConstructorHelpers::FObjectFinder<USoundBase>MusicaActual(TEXT("SoundWave'/Game/Sounds/background.background'"));
+	MusicaEscenario = MusicaActual.Object;
 }
 
 void AEscenarioDivine::BeginPlay()
 {
 	Super::BeginPlay();
+	AControladorTetris::CoolLeft = 0.5f;
+	AControladorTetris::CoolDown = 0.5f;
 	CrearEscenario();
 }
 
@@ -31,6 +35,9 @@ FString AEscenarioDivine::ObtenerNombreEscenario()
 
 void AEscenarioDivine::CrearEscenario()
 {
+	MusicaComponente = NewObject<UAudioComponent>(this);
+	MusicaComponente->SetSound(MusicaEscenario);
+	MusicaComponente->Play();
 	LimitePiezasMesh->SetMaterial(0, LimitePiezasMaterial);
 	EscenarioMesh->SetMaterial(0, EscenarioMaterial);
 	EscenarioMesh->SetRelativeLocation(FVector(50.0f, 0.0f, 100.0f));

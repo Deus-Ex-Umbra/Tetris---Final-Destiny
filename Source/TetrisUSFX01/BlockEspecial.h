@@ -18,4 +18,5 @@ public:
 private:
 	float Tiempo;
 	float TiempoMagico;
+	float TiempoControl;
 };

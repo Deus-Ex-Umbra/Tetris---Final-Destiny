@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Piece.h"
+#include "Components/TextRenderComponent.h"
 #include "Board.generated.h"
 UCLASS()
 class TETRISUSFX01_API ABoard : public APawn
@@ -35,6 +36,8 @@ private:
 	UPROPERTY()
 		class AEscenario* Escenario;
 	UPROPERTY()
+		class AEscenario* EscenarioA;
+	UPROPERTY()
 		class AFabricaEscenario* FabricaEscenario;
 	UPROPERTY()
 		class AConstructPieceI* ConstructorPieceI;
@@ -62,10 +65,14 @@ private:
 		class APieceCDave* PieceCDave;
 	UPROPERTY()
 		class ADirectorPiece* DirectorPiece;
-	enum PieceStatus { PS_NOT_INITED, PS_MOVING, PS_GOT_BOTTOM };
+	UPROPERTY()
+		UTextRenderComponent* PuntajeText;
+	UPROPERTY()
+		UTextRenderComponent* LineasText;
+	UPROPERTY()
+		UTextRenderComponent* TiempoText;
+	enum PieceStatus { PS_NOT_INITED, PS_MOVING, PS_GOT_BOTTOM, GAME_OVER };
 	PieceStatus Status = PS_NOT_INITED;
-	const float CoolDown = 0.5f;
-	float CoolLeft = 0.5f;
 	bool bGameOver = false;
 	bool CheckGameOver();
 	void EstablecerConstructPiece(int _numConstructPiece);
@@ -73,4 +80,6 @@ private:
 	int numCurrentPiece;
 	int numNextPiece;
 	int numNextNextPiece;
+	float TiempoCambioColor;
+	FColor ColorAzar(int _ColorAzar);
 };

@@ -1,3 +1,0 @@
-C:\Users\USUARIO\Desktop\Materias Universidad\SIS457\TetrisUSFX01-master\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\Definitions.TetrisUSFX01.h
-C:\Users\USUARIO\Desktop\Materias Universidad\SIS457\TetrisUSFX01-master\Source\TetrisUSFX01\EscenarioFactory.h
-C:\Users\USUARIO\Desktop\Materias Universidad\SIS457\TetrisUSFX01-master\Intermediate\Build\Win64\UE4Editor\Inc\TetrisUSFX01\EscenarioFactory.generated.h

@@ -3,5 +3,7 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UOb
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\USUARIO\Desktop\Tetris - Final\Source\TetrisUSFX01/EscenarioThisWorldIsBeautiful.h
 C:\Users\USUARIO\Desktop\Tetris - Final\Source\TetrisUSFX01\Escenario.h
+C:\Users\USUARIO\Desktop\Tetris - Final\Source\TetrisUSFX01\EstadoEscenario.h
+C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\Inc\TetrisUSFX01\EstadoEscenario.generated.h
 C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\Inc\TetrisUSFX01\Escenario.generated.h
 C:\Users\USUARIO\Desktop\Tetris - Final\Intermediate\Build\Win64\UE4Editor\Inc\TetrisUSFX01\EscenarioThisWorldIsBeautiful.generated.h

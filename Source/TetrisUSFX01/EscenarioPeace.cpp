@@ -1,7 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "EscenarioPeace.h"
+#include "ControladorTetris.h"
 
 AEscenarioPeace::AEscenarioPeace()
 {
@@ -14,11 +12,14 @@ AEscenarioPeace::AEscenarioPeace()
 	EscenarioMesh->SetStaticMesh(EscenarioNMesh.Object);
 	LimitePiezasMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/M_Glass.M_Glass'"));
 	EscenarioMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/EscenarioSoledad_Mat.EscenarioSoledad_Mat'"));
+	MusicaEscenario = LoadObject<USoundBase>(nullptr, TEXT("SSoundWave'/Game/Sounds/background.background'"));
 }
 
 void AEscenarioPeace::BeginPlay()
 {
 	Super::BeginPlay();
+	AControladorTetris::CoolLeft = 0.8f;
+	AControladorTetris::CoolDown = 0.8f;
 	CrearEscenario();
 }
 

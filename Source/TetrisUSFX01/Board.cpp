@@ -2,6 +2,7 @@
 
 
 #include "Board.h"
+#include "ControladorTetris.h"
 #include "EngineUtils.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
@@ -24,6 +25,10 @@
 ABoard::ABoard()
 {
 	PrimaryActorTick.bCanEverTick = true;
+    PuntajeText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("PuntajeText"));
+    LineasText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("LineasText"));
+    TiempoText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("TiempoText"));
+    TiempoCambioColor = 0;
 }
 
 void ABoard::BeginPlay()
@@ -44,6 +49,9 @@ void ABoard::BeginPlay()
     PieceCDave = GetWorld()->SpawnActor<APieceCDave>(APieceCDave::StaticClass());
     FabricaEscenario = GetWorld()->SpawnActor<AFabricaEscenario>(AFabricaEscenario::StaticClass());
     Escenario = FabricaEscenario->FabricarEscenario(FMath::RandRange(1, 4));
+    EscenarioA = Escenario;
+    Escenario->IniciarEstado(EscenarioA);
+    AControladorTetris* Controlador = GetWorld()->SpawnActor<AControladorTetris>(AControladorTetris::StaticClass());
     for (TActorIterator<APiece> it(GetWorld()); it; ++it)
     {
         if (it->GetFName() == TEXT("DissmissPieces"))
@@ -52,6 +60,21 @@ void ABoard::BeginPlay()
             it->Destroy();
         }
     }
+    PuntajeText->SetRelativeLocation(FVector(0.0f, -175.0f, 155.0f));
+    PuntajeText->SetRelativeRotation(FRotator(0.0f, 180.0f, 0.0f));
+    PuntajeText->SetRelativeScale3D(FVector(0.5f, 0.5f, 0.5f));
+    PuntajeText->SetTextRenderColor(FColor::White);
+    PuntajeText->SetText(FString::Printf(TEXT("Puntos Totales: %i"), AControladorTetris::Puntaje));
+    LineasText->SetRelativeLocation(FVector(0.0f, -175.0f, 95.0f));
+    LineasText->SetRelativeRotation(FRotator(0.0f, 180.0f, 0.0f));
+    LineasText->SetRelativeScale3D(FVector(0.5f, 0.5f, 0.5f));
+    LineasText->SetTextRenderColor(FColor::White);    
+    LineasText->SetText(FString::Printf(TEXT("Lineas Totales: %i"), AControladorTetris::Lineas));
+    TiempoText->SetRelativeLocation(FVector(0.0f, -175.0f, 35.0f));
+    TiempoText->SetRelativeRotation(FRotator(0.0f, 180.0f, 0.0f));
+    TiempoText->SetRelativeScale3D(FVector(0.5f, 0.5f, 0.5f));
+    TiempoText->SetTextRenderColor(FColor::White);
+    TiempoText->SetText(FString::Printf(TEXT("Tiempo: %i"), int(AControladorTetris::TiempoJuego)));
 }
 
 ABoard* ABoard::instancia = nullptr;
@@ -67,21 +90,22 @@ void ABoard::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-    if (bGameOver)
-    {
-        return;
-    }
+    if (bGameOver) {
+        AControladorTetris::GameOver = true;
+        Escenario->CambiarEstadoEscenario(EscenarioA, 0, 0);
+		return;
+	}
 
     switch (Status)
     {
     case PS_NOT_INITED:
         CrearPieces();
-        CoolLeft = CoolDown;
+        AControladorTetris::CoolLeft = AControladorTetris::CoolDown;
         Status = PS_MOVING;
         break;
     case PS_MOVING:
-        CoolLeft -= DeltaTime;
-        if (CoolLeft <= 0.0f)
+        AControladorTetris::CoolLeft -= DeltaTime;
+        if (AControladorTetris::CoolLeft <= 0.0f)
         {
             MoveDown();
         }
@@ -89,8 +113,8 @@ void ABoard::Tick(float DeltaTime)
     case PS_GOT_BOTTOM:
         NextNextPiece->EliminarPiece();
         NextPiece->EliminarPiece();
-        CoolLeft -= DeltaTime;
-        if (CoolLeft <= 0.0f)
+        AControladorTetris::CoolLeft -= DeltaTime;
+        if (AControladorTetris::CoolLeft <= 0.0f)
         {
             if (CurrentPiece)
             {
@@ -99,19 +123,31 @@ void ABoard::Tick(float DeltaTime)
             }
             CurrentPiece = nullptr;
             NewPiece();
-            CoolLeft = CoolDown;
+            AControladorTetris::Puntaje += FMath::RandRange(5, 10);
+            PuntajeText->SetText(FString::Printf(TEXT("Puntos Totales: %i"), AControladorTetris::Puntaje));
+            AControladorTetris::CoolLeft = AControladorTetris::CoolDown;
             Status = PS_MOVING;
         }
+        break;
+    case GAME_OVER:
         break;
     default:
         break;
     }
+    AControladorTetris::TiempoJuego += DeltaTime;
+    TiempoText->SetText(FString::Printf(TEXT("Tiempo: %i"), int(AControladorTetris::TiempoJuego)));
+    if (TiempoCambioColor >= 0.3) {
+        PuntajeText->SetTextRenderColor(ColorAzar(FMath::RandRange(1, 5)));
+        LineasText->SetTextRenderColor(ColorAzar(FMath::RandRange(1, 5)));
+        TiempoText->SetTextRenderColor(ColorAzar(FMath::RandRange(1, 5)));
+        TiempoCambioColor = 0;
+    }
+    TiempoCambioColor += DeltaTime;
 }
 
 void ABoard::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
     PlayerInputComponent->BindAction("Rotate", IE_Pressed, this, &ABoard::Rotate);
     PlayerInputComponent->BindAction("MoveDown", IE_Pressed, this, &ABoard::MoveDown);
     PlayerInputComponent->BindAction("MoveLeft", IE_Pressed, this, &ABoard::MoveLeft);
@@ -160,7 +196,7 @@ void ABoard::MoveDown()
         {
             Status = PS_GOT_BOTTOM;
         }
-        CoolLeft = CoolDown;
+        AControladorTetris::CoolLeft = AControladorTetris::CoolDown;
     }
 }
 
@@ -175,7 +211,7 @@ void ABoard::NewPiece()
     numCurrentPiece = numNextPiece;
     EstablecerConstructPiece(numCurrentPiece);
     CurrentPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
-    CurrentPiece->SpawnearBlocks(NextPiece->ObtenerBlocks());
+    CurrentPiece->SpawnearBlocks(NextPiece->ObtenerCoordenadasBlocks(), NextPiece->ObtenerBlocks());
     if (NextPiece)
     {
         NextPiece->Dismiss();
@@ -184,13 +220,13 @@ void ABoard::NewPiece()
     numNextPiece = numNextNextPiece;
     EstablecerConstructPiece(numNextPiece);
     NextPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
-    NextPiece->SpawnearBlocks(NextNextPiece->ObtenerBlocks());
+    NextPiece->SpawnearBlocks(NextNextPiece->ObtenerCoordenadasBlocks(), NextNextPiece->ObtenerBlocks());
     if (NextNextPiece)
     {
         NextNextPiece->Dismiss();
         NextNextPiece->Destroy();
     }
-    numNextNextPiece = FMath::RandRange(1, 10);
+    numNextNextPiece = (AControladorTetris::SceneFinal) ? 11 : FMath::RandRange(1, 10);
     if (numNextNextPiece == 8) numNextNextPiece = (FMath::RandRange(0, 2) != 1) ? 9 : 8; 
     EstablecerConstructPiece(numNextNextPiece);
     NextNextPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 105.0f, 95.0f), FRotator(0.0f, 0.0f, 0.0f));
@@ -211,7 +247,7 @@ void ABoard::CheckLine()
         FCollisionShape CollisionShape;
         FVector Extent(4.5f, 49.5f, 95.0 + 4.5 - 5.0 * z);
         CollisionShape.SetBox(Extent);
-        DrawDebugBox(GetWorld(), Location, Extent, FColor::Purple, false, 1, 0, 1);
+        DrawDebugBox(GetWorld(), Location, Extent, FColor::Silver, false, 1, 0, 1);
         FCollisionQueryParams Params;
         FCollisionResponseParams ResponseParam;
         if (GetWorld()->OverlapMultiByChannel(OutOverlaps,
@@ -251,6 +287,11 @@ void ABoard::CheckLine()
                 Result.GetActor()->Destroy();
             }
             MoveDownFromLine(z);
+            AControladorTetris::Puntaje += 30;
+            AControladorTetris::Lineas += 1;
+            PuntajeText->SetText(FString::Printf(TEXT("Puntos Totales: %i"), AControladorTetris::Puntaje));
+            LineasText->SetText(FString::Printf(TEXT("Lineas Totales: %i"), AControladorTetris::Lineas));
+            Escenario->CambiarEstadoEscenario(EscenarioA, AControladorTetris::Puntaje, AControladorTetris::Lineas);
         }
     }
 }
@@ -269,7 +310,7 @@ void ABoard::MoveDownToEnd()
     {
     case PS_MOVING:
         Status = PS_GOT_BOTTOM;
-        CoolLeft = CoolDown;
+        AControladorTetris::CoolLeft = AControladorTetris::CoolDown;
         break;
     case PS_GOT_BOTTOM:
         break;
@@ -284,6 +325,7 @@ bool ABoard::CheckGameOver()
     if (!CurrentPiece)
     {
         UE_LOG(LogTemp, Warning, TEXT("NoPieces"));
+        Status = GAME_OVER;
         return true;
     }
     return CurrentPiece->CheckWillCollision([](FVector OldVector) { return OldVector; });
@@ -346,4 +388,22 @@ void ABoard::CrearPieces()
     EstablecerConstructPiece(numNextNextPiece);
     NextNextPiece = DirectorPiece->ObtenerPiece(FVector(0.0f, 105.0f, 95.0f), FRotator(0.0f, 0.0f, 0.0f));
     NextNextPiece->SpawnearBlocks();
+}
+
+FColor ABoard::ColorAzar(int _ColorAzar)
+{
+    switch (_ColorAzar)
+    {
+    case 1:
+		return FColor::Green;
+    case 2:
+        return FColor::Blue;
+    case 3:
+        return FColor::Yellow;
+    case 4:
+        return FColor::White;
+    default:
+        return FColor::Emerald;
+        break;
+    }
 }

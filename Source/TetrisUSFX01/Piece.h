@@ -38,7 +38,8 @@ public:
 	void EstablecerNumsBlocks(TArray<int> _BlocksNum);
 	void EstablecerCoordenadasBlocks(std::vector<std::pair<float, float>> _CoordenadasBlocks);
 	void SpawnearBlocks();
-	void SpawnearBlocks(TArray<int> _Blocks);
+	void SpawnearBlocks(std::vector<std::pair<float, float>> _Coordenadas, TArray<int> _Blocks);
 	void EliminarPiece();
 	TArray<int> ObtenerBlocks();
+	std::vector<std::pair<float, float>> ObtenerCoordenadasBlocks();
 };

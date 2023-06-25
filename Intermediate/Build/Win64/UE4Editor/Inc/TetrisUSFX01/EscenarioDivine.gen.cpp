@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioDivine() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioDivine, 2365006692);
+	IMPLEMENT_CLASS(AEscenarioDivine, 2025347240);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioDivine>()
 	{
 		return AEscenarioDivine::StaticClass();

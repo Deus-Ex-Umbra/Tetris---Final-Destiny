@@ -35,7 +35,7 @@ AEscenario* AFabricaEscenario::FabricarEscenario(int _numEscenario)
 		return GetWorld()->SpawnActor<AEscenarioNotExistWorld>();
 		break;
 	default:
-		if (FMath::RandRange(1, 32) == 26) return GetWorld()->SpawnActor<AEscenarioDivine>();
+		if (FMath::RandRange(4, 18) == 9) return GetWorld()->SpawnActor<AEscenarioDivine>();
 		else switch (FMath::RandRange(1, 3))
 		{
 		case 1:

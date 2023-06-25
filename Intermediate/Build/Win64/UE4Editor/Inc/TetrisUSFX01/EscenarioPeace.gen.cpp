@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioPeace() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioPeace, 2926019613);
+	IMPLEMENT_CLASS(AEscenarioPeace, 1127084698);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioPeace>()
 	{
 		return AEscenarioPeace::StaticClass();

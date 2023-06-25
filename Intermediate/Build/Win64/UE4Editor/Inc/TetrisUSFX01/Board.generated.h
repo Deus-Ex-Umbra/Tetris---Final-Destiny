@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TETRISUSFX01_Board_generated_h
 
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_SPARSE_DATA
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_RPC_WRAPPERS
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_INCLASS_NO_PURE_DECLS \
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_SPARSE_DATA
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_RPC_WRAPPERS
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABoard(); \
 	friend struct Z_Construct_UClass_ABoard_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ABoard)
 
 
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_INCLASS \
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_INCLASS \
 private: \
 	static void StaticRegisterNativesABoard(); \
 	friend struct Z_Construct_UClass_ABoard_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ABoard)
 
 
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_STANDARD_CONSTRUCTORS \
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABoard(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABoard) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_ENHANCED_CONSTRUCTORS \
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ABoard(ABoard&&); \
@@ -58,8 +58,9 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABoard)
 
 
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_PRIVATE_PROPERTY_OFFSET \
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Escenario() { return STRUCT_OFFSET(ABoard, Escenario); } \
+	FORCEINLINE static uint32 __PPO__EscenarioA() { return STRUCT_OFFSET(ABoard, EscenarioA); } \
 	FORCEINLINE static uint32 __PPO__FabricaEscenario() { return STRUCT_OFFSET(ABoard, FabricaEscenario); } \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceI() { return STRUCT_OFFSET(ABoard, ConstructorPieceI); } \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceJ() { return STRUCT_OFFSET(ABoard, ConstructorPieceJ); } \
@@ -73,30 +74,33 @@ public: \
 	FORCEINLINE static uint32 __PPO__ConstructorPieceX() { return STRUCT_OFFSET(ABoard, ConstructorPieceX); } \
 	FORCEINLINE static uint32 __PPO__CruzDivine() { return STRUCT_OFFSET(ABoard, CruzDivine); } \
 	FORCEINLINE static uint32 __PPO__PieceCDave() { return STRUCT_OFFSET(ABoard, PieceCDave); } \
-	FORCEINLINE static uint32 __PPO__DirectorPiece() { return STRUCT_OFFSET(ABoard, DirectorPiece); }
+	FORCEINLINE static uint32 __PPO__DirectorPiece() { return STRUCT_OFFSET(ABoard, DirectorPiece); } \
+	FORCEINLINE static uint32 __PPO__PuntajeText() { return STRUCT_OFFSET(ABoard, PuntajeText); } \
+	FORCEINLINE static uint32 __PPO__LineasText() { return STRUCT_OFFSET(ABoard, LineasText); } \
+	FORCEINLINE static uint32 __PPO__TiempoText() { return STRUCT_OFFSET(ABoard, TiempoText); }
 
 
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_9_PROLOG
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_GENERATED_BODY_LEGACY \
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_10_PROLOG
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_PRIVATE_PROPERTY_OFFSET \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_SPARSE_DATA \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_RPC_WRAPPERS \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_INCLASS \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_STANDARD_CONSTRUCTORS \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_PRIVATE_PROPERTY_OFFSET \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_SPARSE_DATA \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_RPC_WRAPPERS \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_INCLASS \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Tetris___Final_Source_TetrisUSFX01_Board_h_12_GENERATED_BODY \
+#define Tetris___Final_Source_TetrisUSFX01_Board_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_PRIVATE_PROPERTY_OFFSET \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_SPARSE_DATA \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_INCLASS_NO_PURE_DECLS \
-	Tetris___Final_Source_TetrisUSFX01_Board_h_12_ENHANCED_CONSTRUCTORS \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_PRIVATE_PROPERTY_OFFSET \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_SPARSE_DATA \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_INCLASS_NO_PURE_DECLS \
+	Tetris___Final_Source_TetrisUSFX01_Board_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

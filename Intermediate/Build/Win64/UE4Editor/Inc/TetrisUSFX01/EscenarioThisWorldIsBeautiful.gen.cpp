@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioThisWorldIsBeautiful() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioThisWorldIsBeautiful, 3731840796);
+	IMPLEMENT_CLASS(AEscenarioThisWorldIsBeautiful, 1208628658);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioThisWorldIsBeautiful>()
 	{
 		return AEscenarioThisWorldIsBeautiful::StaticClass();
